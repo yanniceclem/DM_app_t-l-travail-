@@ -17,25 +17,25 @@ Développer une application web de gestion des employés et de leurs modes de tr
 
 ## Structure du projet
 
-projet/
-├── config/
-│ └── database.php
-├── controllers/
-│ ├── EmployeController.php
-│ └── ModeTravailController.php
-├── models/
-│ ├── Employe.php
-│ └── ModeTravail.php
-├── views/
-│ └── employe/
-│ ├── index.php
-│ ├── show.php
-│ └── create.php
-├── docker-compose.yml
-├── Dockerfile
-├── php.ini
-├── index.php
-└── README.md
+projet/  
+├── config/  
+│ └── database.php  
+├── controllers/  
+│ ├── EmployeController.php  
+│ └── ModeTravailController.php  
+├── models/  
+│ ├── Employe.php  
+│ └── ModeTravail.php  
+├── views/  
+│ └── employe/  
+│ ├── index.php  
+│ ├── show.php  
+│ └── create.php  
+├── docker-compose.yml  
+├── Dockerfile  
+├── php.ini  
+├── index.php  
+└── README.md  
 
 ## Fonctionnalités
 
