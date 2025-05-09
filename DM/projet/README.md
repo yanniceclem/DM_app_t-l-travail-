@@ -46,18 +46,37 @@ Développer une application web de gestion des employés et de leurs modes de tr
 
 ## Fonctionnalités
 
--Liste des employés
+- Liste des employés
+- Affichage des détails d’un employé
+- Ajout / suppression d’un employé
+- Attribution de modes de travail par jour (présentiel ou télétravail)
+- Suppression d’un mode de travail
+- Interface basique avec navigation
 
--Affichage des détails d’un employé
+##  Installation et configuration
 
--Ajout / suppression d’un employé
+### 1. Prérequis
+- Docker et Docker Compose installés sur votre machine
 
--Attribution de modes de travail par jour (présentiel ou télétravail)
+### 2. Lancer le projet  
 
--Suppression d’un mode de travail
+Dans un terminal, placez-vous dans le dossier du projet :  
 
--Interface basique avec navigation
+```bash
+cd chemin/vers/le/projet
+docker-compose up --build -d
+```
+### 3. Accéder à l'application  
 
+Ouvrez votre navigateur à l'adresse :
+http://localhost:8080
+
+## Guide d'utilisation
+
+- Page d'accueil : liste des employés
+- Bouton “Voir” : affiche les détails de l’employé et ses jours de télétravail/présentiel
+- Bouton “Supprimer” : supprime l’employé sélectionné
+- Bouton “Ajouter un employé” : formulaire d’ajout avec son mode de travail
 
 
 Projet développé par CLEMENCIN YANNICE
