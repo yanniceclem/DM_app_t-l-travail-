@@ -2,31 +2,42 @@ version: '3.8'
 
 services:
   web:
-    build: ./docker/php
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
     ports:
       - "8080:80"
     volumes:
       - ./src:/var/www/html
     depends_on:
       - db
-    networks:
-      - app-network
 
   db:
     image: mysql:8.0
+    container_name: mysql_db
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: gestion_employes
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
     volumes:
-      - db-data:/var/lib/mysql
-      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - app-network
+    - db_data:/var/lib/mysql
+    - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
-networks:
-  app-network:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8081:80"
 
 volumes:
-  db-data:
+  db_data:
